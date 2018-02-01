@@ -10,7 +10,7 @@ namespace APITourism.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Pages API";
+            ViewBag.Title = "Home Pages Tecnosoft";
 
             return View();
         }
