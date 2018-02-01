@@ -1,0 +1,5 @@
+I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\bin\Debug\ViewModel.dll
+I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\bin\Debug\ViewModel.pdb
+I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
+I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\obj\Debug\ViewModel.dll
+I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\obj\Debug\ViewModel.pdb
