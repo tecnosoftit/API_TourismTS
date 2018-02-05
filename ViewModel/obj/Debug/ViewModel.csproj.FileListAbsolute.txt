@@ -3,3 +3,8 @@ I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\bin\Debug\ViewModel.pdb
 I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
 I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\obj\Debug\ViewModel.dll
 I:\Proyectos\TecnosoftIt\Turism\API_Tourism\ViewModel\obj\Debug\ViewModel.pdb
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\bin\Debug\ViewModel.dll
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\bin\Debug\ViewModel.pdb
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\obj\Debug\ViewModel.dll
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\obj\Debug\ViewModel.pdb
