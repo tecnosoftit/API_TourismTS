@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ViewModel.General
 {
-    class ImagesPerPlan
+    public class ImagesPerPlan
     {
+        public int IMAGE_IDENTIFICACION { get; set; }
+        public int PLAN_IDENTIFICATION { get; set; }
     }
 }
