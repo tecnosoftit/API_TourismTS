@@ -148,7 +148,92 @@ namespace APITourism.Controllers
         public IHttpActionResult PutClasificationTypeUpdate()
         {
             var datemod = DateTime.Parse("2018-02-03 11:20:58");
-            return Ok(_cms.PutClasificationTypeUpdate(3, "Daniel", "Primo de Omar", false, datemod));
+            return Ok(_cms.PutClasificationTypeUpdate(3, "Daniel", "Primo de Omaira", false, datemod));
+        }
+
+        //CRUD PlanDetail
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getplandetail")]
+        public IHttpActionResult GetPlanDetail()
+        {
+            return Ok(_cms.GetPlanDetail());
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getplandetailbyid")]
+        public IHttpActionResult GetPlanDetailById()
+        {
+            var result = _cms.GetPlanDetailById(8);
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/cms/postplandetailcreate")]
+        public IHttpActionResult PostPlanDetailCreate()
+        {
+            var datecre = DateTime.Parse("2018-01-01 13:01:02");
+            var datemod = DateTime.Parse("2018-01-30 10:01:58");
+            return Ok(_cms.PostPlanDetailCreate(2,6,"730000","Piscina-Minibar","Wifi","Jum, sabra Dios","Lero","Lero",datecre,datemod));
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        [Route("api/cms/putplandetailupdate")] //Revisar porque no actualiza
+        public IHttpActionResult PutPlanDetailUpdate()
+        {
+            var datemod = DateTime.Parse("2018-02-06 14:47:50");
+            return Ok(_cms.PutPlanDetailUpdate(8,1,6,"750000","Piscina-Wifi-Parqueadero Doble","Mini bar-Toboganes","Ni puerca vida que es esto","Cheverongo","Ninguna",datemod));
+        }
+
+        //CRUD Plans
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getplan")]
+        public IHttpActionResult GetPlan()
+        {
+            return Ok(_cms.GetPlan());
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getplanbyid")]
+        public IHttpActionResult GetPlanById()
+        {
+            var result = _cms.GetPlanById(4);
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getplanbyname")]
+        public IHttpActionResult GetPlanByName()
+        {
+            return Ok(_cms.GetPlanByName("C"));
+        }
+
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/cms/postplancreate")]
+        public IHttpActionResult PostPlanCreate()
+        {
+            var datecre = DateTime.Parse("2018-01-01 13:01:02");
+            var datemod = DateTime.Parse("2018-01-30 10:01:58");
+            return Ok(_cms.PostPlanCreate("Vacaciones","Vacaciones de Octubre",true,2,datecre,datemod));
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        [Route("api/cms/putplanupdate")] //Revisar porque no actualiza
+        public IHttpActionResult PutPlanUpdate()
+        {
+            var datemod = DateTime.Parse("2018-02-03 11:20:58");
+            return Ok(_cms.PutPlanUpdate(1,"Planzasazo","Super Wow!",true,1,datemod));
         }
     }
 

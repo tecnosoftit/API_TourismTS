@@ -256,5 +256,173 @@ namespace Services
                 return 0;
             }
         }
+
+        //CRUD PlanDetail
+
+        public List<PlanDetail> GetPlanDetail()
+        {
+            try
+            {
+                var result = "EXEC SP_PLANDETAILGEN";
+                var rtn = _db.Database.SqlQuery<PlanDetail>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<PlanDetail>();
+            }
+        }
+
+        public List<PlanDetail> GetPlanDetailById(int id)
+        {
+            try
+            {
+                var result = "EXEC SP_PLANDETAILBYID " + id;
+                var rtn = _db.Database.SqlQuery<PlanDetail>(result).ToList();
+                return rtn;
+            }
+            catch (Exception)
+            {
+                return new List<PlanDetail>();
+            }
+        }
+
+        public int PostPlanDetailCreate(int id,int acomodation, string price, string included, string notincluded, string traveler, string policies, string conditions, DateTime creation, DateTime modification)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_PLANDETAILCRE @PLA_ID, @ACOMODATION, @PRICE, @INCLUDED, @NOTINCLUDED, "+
+                        "@TRAVELERINFO, @POLICIES, @CONDITIONS, @CREATION, @MODIFICATION",
+                        new SqlParameter("@PLA_ID", id),
+                        new SqlParameter("@ACOMODATION", acomodation),
+                        new SqlParameter("@PRICE", price),
+                        new SqlParameter("@INCLUDED", included),
+                        new SqlParameter("@NOTINCLUDED", notincluded),
+                        new SqlParameter("@TRAVELERINFO", traveler),
+                        new SqlParameter("@POLICIES", policies),
+                        new SqlParameter("@CONDITIONS", conditions),
+                        new SqlParameter("@CREATION", creation),
+                        new SqlParameter("@MODIFICATION", modification));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        public int PutPlanDetailUpdate(int id, int plaiid, int acomodation, string price, string included, string notincluded, string traveler, string policies, string conditions, DateTime modification)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_PLANDETAILUPD @ID, @PLA_ID, @ACOMODATION, @PRICE, @INCLUDED, @NOTINCLUDED, @TRAVELERINFO,"+ 
+                        "@POLICIES, @CONDITIONS, @MODIFICATION",
+                        new SqlParameter("@ID", id),
+                        new SqlParameter("@PLA_ID", plaiid),
+                        new SqlParameter("@ACOMODATION", acomodation),
+                        new SqlParameter("@PRICE", price),
+                        new SqlParameter("@INCLUDED", included),
+                        new SqlParameter("@NOTINCLUDED", notincluded),
+                        new SqlParameter("@TRAVELERINFO", traveler),
+                        new SqlParameter("@POLICIES", policies),
+                        new SqlParameter("@CONDITIONS", conditions),
+                        new SqlParameter("@MODIFICATION", modification));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        //CRUD Plans
+
+        public List<Plans> GetPlan()
+        {
+            try
+            {
+                var result = "EXEC SP_PLANGEN";
+                var rtn = _db.Database.SqlQuery<Plans>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<Plans>();
+            }
+        }
+
+        public List<Plans> GetPlanById(int id)
+        {
+            try
+            {
+                var result = "EXEC SP_PLANBYID " + id;
+                var rtn = _db.Database.SqlQuery<Plans>(result).ToList();
+                return rtn;
+            }
+            catch (Exception)
+            {
+                return new List<Plans>();
+            }
+        }
+
+        public List<Plans> GetPlanByName(string name)
+        {
+            try
+            {
+                var result = "EXEC SP_PLANBYNAME " + name;
+                var rtn = _db.Database.SqlQuery<Plans>(result).ToList();
+                return rtn;
+            }
+            catch (Exception)
+            {
+                return new List<Plans>();
+            }
+        }
+
+        public int PostPlanCreate(string name, string description, bool active, int type, DateTime creation, DateTime modification)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_PLANCRE @NAME, @DESCRIPTION, @ACTIVE, @TYPE_ID, @CREATION, @MODIFICATION",
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@DESCRIPTION", description),
+                        new SqlParameter("@ACTIVE", active),
+                        new SqlParameter("@TYPE_ID", type),
+                        new SqlParameter("@CREATION", creation),
+                        new SqlParameter("@MODIFICATION", modification));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        public int PutPlanUpdate(int id, string name, string description, bool active, int type, DateTime modification)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_PLANUPD @ID, @NAME, @DESCRIPTION, @ACTIVE, @TYPE_ID, @MODIFICATION",
+                        new SqlParameter("@ID", id),
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@DESCRIPTION", description),
+                        new SqlParameter("@ACTIVE", active),
+                        new SqlParameter("@TYPE_ID", type),
+                        new SqlParameter("@MODIFICATION", modification));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
     }
 }
