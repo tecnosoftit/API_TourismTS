@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="49c0f94c-497d-4f15-84d8-e42ad3b337af" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/BargainFinderMaxRQ_v1-4-5.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="xlink.xsd" MetadataType="Schema" ID="d4486f75-002f-4d59-94dd-f78c1b64312d" SourceId="1" SourceUrl="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/xlink.xsd" />
+    <MetadataFile FileName="xmldsig-core-schema.xsd" MetadataType="Schema" ID="b9c1227d-5cab-4121-97a0-434990c002d0" SourceId="1" SourceUrl="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/xmldsig-core-schema.xsd" />
+    <MetadataFile FileName="BargainFinderMaxRQRS_v1-4-5.xsd" MetadataType="Schema" ID="969d5b39-4451-49e7-8977-ee4bde635480" SourceId="1" SourceUrl="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/BargainFinderMaxRQRS_v1-4-5.xsd" />
+    <MetadataFile FileName="xml.xsd" MetadataType="Schema" ID="8bd66208-e5f5-4ece-bb20-ec58a4ff52e7" SourceId="1" SourceUrl="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/xml.xsd" />
+    <MetadataFile FileName="wsse.xsd" MetadataType="Schema" ID="4ceb0ae4-5b21-4fc3-b99c-c86e7ea5bc47" SourceId="1" SourceUrl="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/wsse.xsd" />
+    <MetadataFile FileName="BargainFinderMaxRQ_v1-4-5.wsdl" MetadataType="Wsdl" ID="9aa4fa49-ff6f-47ad-ab91-fd8af152dfb3" SourceId="1" SourceUrl="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/BargainFinderMaxRQ_v1-4-5.wsdl" />
+    <MetadataFile FileName="envelope.xsd" MetadataType="Schema" ID="52f97d66-5cea-4be9-8081-e12221ecc33b" SourceId="1" SourceUrl="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/envelope.xsd" />
+    <MetadataFile FileName="msg-header-2_0.xsd" MetadataType="Schema" ID="656e34bd-923e-4e4b-8215-58f7fc3b5091" SourceId="1" SourceUrl="http://webservices.sabre.com/wsdl/sabreXML1.0.00/BFM/msg-header-2_0.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
