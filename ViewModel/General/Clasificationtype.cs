@@ -8,11 +8,11 @@ namespace ViewModel.General
 {
     public class ClasificationType
     {
-        public int Cla_Id { get; set; }
-        public string Cla_Name { get; set; }
-        public string Cla_Description { get; set; }
-        public bool Cla_Active { get; set; }
-        public DateTime Cla_CreationDate { get; set; }
-        public DateTime Cla_ModificationDate { get; set; }
+        public int IDENTIFICATION { get; set; }
+        public string NAME { get; set; }
+        public string DESCRIPTION_ { get; set; }
+        public bool STATUS_ { get; set; }
+        public DateTime CREATION { get; set; }
+        public DateTime MODIFICATION { get; set; }
     }
 }
