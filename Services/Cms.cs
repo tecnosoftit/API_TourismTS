@@ -12,7 +12,7 @@ namespace Services
     public class Cms
     {
         private readonly TecnoTourismEntities _db = new TecnoTourismEntities();
-        
+
         //CRUD Images
         public List<Images> GetImages()
         {
@@ -32,7 +32,7 @@ namespace Services
         {
             try
             {
-                var result = "EXEC SP_IMAGESBYID "+ id;
+                var result = "EXEC SP_IMAGESBYID " + id;
                 var rtn = _db.Database.SqlQuery<Images>(result).ToList();
                 return rtn;
             }
@@ -63,7 +63,7 @@ namespace Services
             {
                 var result =
                     _db.Database.ExecuteSqlCommand(
-                        "EXEC SP_IMAGESCRE @NAME, @DESCRIPTION, @ACTIVE, @CREATION, @MODIFICATION", 
+                        "EXEC SP_IMAGESCRE @NAME, @DESCRIPTION, @ACTIVE, @CREATION, @MODIFICATION",
                         new SqlParameter("@NAME", name),
                         new SqlParameter("@DESCRIPTION", description),
                         new SqlParameter("@ACTIVE", active),
@@ -287,13 +287,13 @@ namespace Services
             }
         }
 
-        public int PostPlanDetailCreate(int id,int acomodation, string price, string included, string notincluded, string traveler, string policies, string conditions, DateTime creation, DateTime modification)
+        public int PostPlanDetailCreate(int id, int acomodation, string price, string included, string notincluded, string traveler, string policies, string conditions, DateTime creation, DateTime modification)
         {
             try
             {
                 var result =
                     _db.Database.ExecuteSqlCommand(
-                        "EXEC SP_PLANDETAILCRE @PLA_ID, @ACOMODATION, @PRICE, @INCLUDED, @NOTINCLUDED, "+
+                        "EXEC SP_PLANDETAILCRE @PLA_ID, @ACOMODATION, @PRICE, @INCLUDED, @NOTINCLUDED, " +
                         "@TRAVELERINFO, @POLICIES, @CONDITIONS, @CREATION, @MODIFICATION",
                         new SqlParameter("@PLA_ID", id),
                         new SqlParameter("@ACOMODATION", acomodation),
@@ -319,7 +319,7 @@ namespace Services
             {
                 var result =
                     _db.Database.ExecuteSqlCommand(
-                        "EXEC SP_PLANDETAILUPD @ID, @PLA_ID, @ACOMODATION, @PRICE, @INCLUDED, @NOTINCLUDED, @TRAVELERINFO,"+ 
+                        "EXEC SP_PLANDETAILUPD @ID, @PLA_ID, @ACOMODATION, @PRICE, @INCLUDED, @NOTINCLUDED, @TRAVELERINFO," +
                         "@POLICIES, @CONDITIONS, @MODIFICATION",
                         new SqlParameter("@ID", id),
                         new SqlParameter("@PLA_ID", plaiid),
@@ -416,6 +416,94 @@ namespace Services
                         new SqlParameter("@DESCRIPTION", description),
                         new SqlParameter("@ACTIVE", active),
                         new SqlParameter("@TYPE_ID", type),
+                        new SqlParameter("@MODIFICATION", modification));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        //CRUD Types
+
+        public List<Types> GetTypes()
+        {
+            try
+            {
+                var result = "EXEC SP_TYPEGEN";
+                var rtn = _db.Database.SqlQuery<Types>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<Types>();
+            }
+        }
+
+        public List<Types> GetTypeById(int id)
+        {
+            try
+            {
+                var result = "EXEC SP_TYPEBYID " + id;
+                var rtn = _db.Database.SqlQuery<Types>(result).ToList();
+                return rtn;
+            }
+            catch (Exception)
+            {
+                return new List<Types>();
+            }
+        }
+
+        public List<Types> GetTypeByName(string name)
+        {
+            try
+            {
+                var result = "EXEC SP_TYPEBYNAME " + name;
+                var rtn = _db.Database.SqlQuery<Types>(result).ToList();
+                return rtn;
+            }
+            catch (Exception)
+            {
+                return new List<Types>();
+            }
+        }
+
+        public int PostTypeCreate(string name, string description, string url, int claid, bool active, DateTime creation, DateTime modification)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_TYPECRE @NAME, @DESCRIPTION, @URL, @CLA_ID, @ACTIVE, @CREATION, @MODIFICATION",
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@DESCRIPTION", description),
+                        new SqlParameter("@URL", url),
+                        new SqlParameter("@CLA_ID", claid),
+                        new SqlParameter("@ACTIVE", active),
+                        new SqlParameter("@CREATION", creation),
+                        new SqlParameter("@MODIFICATION", modification));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        public int PutTypeUpdate(int id, string name, string description, string url, int claid, bool active, DateTime modification)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_TYPEUPD @ID, @NAME, @DESCRIPTION, @URL, @CLA_ID, @ACTIVE, @MODIFICATION",
+                        new SqlParameter("@ID", id),
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@DESCRIPTION", description),
+                        new SqlParameter("@URL", url),
+                        new SqlParameter("@CLA_ID", claid),
+                        new SqlParameter("@ACTIVE", active),
                         new SqlParameter("@MODIFICATION", modification));
                 return result;
             }

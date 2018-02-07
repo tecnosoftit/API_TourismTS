@@ -9,6 +9,8 @@ namespace ViewModel.General
     public class ImagesPerPlan
     {
         public int IMAGE_IDENTIFICACION { get; set; }
+        public string IMAGE_ { get; set; }
         public int PLAN_IDENTIFICATION { get; set; }
+        public string PLAN_ { get; set; }
     }
 }
