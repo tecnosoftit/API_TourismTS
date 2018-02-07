@@ -235,6 +235,53 @@ namespace APITourism.Controllers
             var datemod = DateTime.Parse("2018-02-03 11:20:58");
             return Ok(_cms.PutPlanUpdate(1,"Planzasazo","Super Wow!",true,1,datemod));
         }
+
+        //CRUD Types
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/gettypes")]
+        public IHttpActionResult GetTypes()
+        {
+            return Ok(_cms.GetTypes());
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/gettypebyid")]
+        public IHttpActionResult GetTypeById()
+        {
+            var result = _cms.GetTypeById(7);
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/gettypebyname")]
+        public IHttpActionResult GetTypeByName()
+        {
+            return Ok(_cms.GetTypeByName("N"));
+        }
+
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/cms/posttypecreate")]
+        public IHttpActionResult PostTypeCreate()
+        {
+            var datecre = DateTime.Parse("2018-02-07 13:01:02");
+            var datemod = DateTime.Parse("2018-02-07 10:01:58");
+            return Ok(_cms.PostTypeCreate("Cambio","Cambio prueba","www.prueba.com.co",3,true,datecre,datemod));
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        [Route("api/cms/puttypeupdate")] //Revisar porque no actualiza
+        public IHttpActionResult PutTypeUpdate()
+        {
+            var datemod = DateTime.Parse("2018-02-07 11:20:58");
+            return Ok(_cms.PutTypeUpdate(4,"Neron","Nombresito","www.neron.com.co",2,true,datemod));
+        }
     }
 
     
