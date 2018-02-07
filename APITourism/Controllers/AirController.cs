@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Services.Air.Session;
 using ViewModel.Air;
 
 namespace APITourism.Controllers
@@ -15,7 +16,8 @@ namespace APITourism.Controllers
         [Route("api/Air/getflights")]
         public IHttpActionResult Getflights(SearchFlights model)
         {
-            string token = CrearSession.CrearSesion();
+            string token = CrearSesion.CreateSession();
+            return Ok("ok");
         }
     }
 }

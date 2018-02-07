@@ -10,37 +10,37 @@ namespace Services.Air.Session
 {
     public class CrearSesion
     {
-        //public static string CrearSesion()
-        //{
-        //    try
-        //    {
-        //        MessageHeader msgHeader = BuildMessageHead();
-        //        Security security = BuildSecurity();
-        //        SessionCreateRQ.SessionCreateRQ session = new SessionCreateRQ.SessionCreateRQ();
-        //        SessionCreateRQ.SessionCreateRQPOS pos = new SessionCreateRQPOS();
-        //        SessionCreateRQ.SessionCreateRQPOSSource source = new SessionCreateRQPOSSource();
-        //        source.PseudoCityCode = "7MSH";
-        //        pos.Source = source;
-        //        session.POS = pos;
-        //        SessionCreateRQService crearServicio = new SessionCreateRQService();
-        //        crearServicio.MessageHeaderValue = msgHeader;
-        //        crearServicio.SecurityValue = security;
-        //        SessionCreateRS result = crearServicio.SessionCreateRQ(session);
-        //        if (result.Errors != null)
-        //        {
-        //            return result.Errors.Error.ErrorMessage;
-        //        }
-        //        else
-        //        {
-        //            security = crearServicio.SecurityValue;
-        //            return security.BinarySecurityToken;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return ex.Message;
-        //    }
-        //}
+        public static string CreateSession()
+        {
+            try
+            {
+                MessageHeader msgHeader = BuildMessageHead();
+                Security security = BuildSecurity();
+                SessionCreateRQ.SessionCreateRQ session = new SessionCreateRQ.SessionCreateRQ();
+                SessionCreateRQ.SessionCreateRQPOS pos = new SessionCreateRQPOS();
+                SessionCreateRQ.SessionCreateRQPOSSource source = new SessionCreateRQPOSSource();
+                source.PseudoCityCode = "7MSH";
+                pos.Source = source;
+                session.POS = pos;
+                SessionCreateRQService crearServicio = new SessionCreateRQService();
+                crearServicio.MessageHeaderValue = msgHeader;
+                crearServicio.SecurityValue = security;
+                SessionCreateRS result = crearServicio.SessionCreateRQ(session);
+                if (result.Errors != null)
+                {
+                    return result.Errors.Error.ErrorMessage;
+                }
+                else
+                {
+                    security = crearServicio.SecurityValue;
+                    return security.BinarySecurityToken;
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
 
         public static MessageHeader BuildMessageHead()
         {

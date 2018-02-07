@@ -19,3 +19,19 @@ C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Newtonsoft
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\obj\Debug\Services.dll
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\obj\Debug\Services.pdb
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\Services.dll.config
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\Services.dll
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\Services.pdb
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\EntityFramework.dll
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\EntityFramework.SqlServer.dll
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\Model.dll
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\Newtonsoft.Json.dll
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\ViewModel.dll
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\Model.pdb
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\ViewModel.pdb
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\EntityFramework.xml
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\EntityFramework.SqlServer.xml
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\bin\Debug\Newtonsoft.Json.xml
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\obj\Debug\Services.dll
+I:\Proyectos\TecnosoftIt\Turism\API\API_TourismTS\Services\obj\Debug\Services.pdb
