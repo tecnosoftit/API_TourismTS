@@ -40,12 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="General\CitesxPlan.cs" />
+    <Compile Include="General\City.cs" />
     <Compile Include="General\ClasificationType.cs" />
+    <Compile Include="General\Company.cs" />
+    <Compile Include="General\CompanyProperties.cs" />
+    <Compile Include="General\Country.cs" />
     <Compile Include="General\Images.cs" />
     <Compile Include="General\ImagesPerPlan.cs" />
     <Compile Include="General\PlanDetail.cs" />
     <Compile Include="General\Plans.cs" />
+    <Compile Include="General\PlansxCompany.cs" />
+    <Compile Include="General\PropertiesxUser.cs" />
+    <Compile Include="General\Role.cs" />
+    <Compile Include="General\State.cs" />
     <Compile Include="General\Types.cs" />
+    <Compile Include="General\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
