@@ -287,6 +287,20 @@ namespace Services
             }
         }
 
+        public List<PlanDetail> GetPlanDetailByAco(int aco)
+        {
+            try
+            {
+                var result = "EXEC SP_PLANDETAILBYACO " + aco;
+                var rtn = _db.Database.SqlQuery<PlanDetail>(result).ToList();
+                return rtn;
+            }
+            catch (Exception)
+            {
+                return new List<PlanDetail>();
+            }
+        }
+
         public int PostPlanDetailCreate(int id, int acomodation, string price, string included, string notincluded, string traveler, string policies, string conditions, DateTime creation, DateTime modification)
         {
             try
@@ -562,8 +576,7 @@ namespace Services
             
             try
             {
-                var result = "EXEC SP_CITESXPLANBYPLA " + plan;
-                var rtn = _db.Database.SqlQuery<CitesxPlan>(result).ToList();
+                var rtn = _db.Database.SqlQuery<CitesxPlan>("SP_CITESXPLANBYPLA @PLA", new SqlParameter("PLA", plan)).ToList();
                 return rtn;
             }
             catch (Exception e)
@@ -739,8 +752,7 @@ namespace Services
         {
             try
             {
-                var result = "EXEC SP_COMPANYBYID " + id;
-                var rtn = _db.Database.SqlQuery<Company>(result).ToList();
+                var rtn = _db.Database.SqlQuery<Company>("SP_COMPANYBYID @ID", new SqlParameter("ID", id)).ToList();
                 return rtn;
             }
             catch (Exception)
@@ -862,8 +874,7 @@ namespace Services
         {
             try
             {
-                var result = "EXEC SP_COMPANYPROPERTIESBYCOM " + com;
-                var rtn = _db.Database.SqlQuery<CompanyProperties>(result).ToList();
+                var rtn = _db.Database.SqlQuery<CompanyProperties>("SP_COMPANYPROPERTIESBYCOM @COM_ID", new SqlParameter("COM_ID", com)).ToList();
                 return rtn;
             }
             catch (Exception)
@@ -1034,8 +1045,7 @@ namespace Services
         {
             try
             {
-                var result = "EXEC SP_PLANSXCOMPANYBYPLAN " + plan;
-                var rtn = _db.Database.SqlQuery<PlansxCompany>(result).ToList();
+                var rtn = _db.Database.SqlQuery<PlansxCompany>("SP_PLANSXCOMPANYBYPLAN @PLA_ID", new SqlParameter("PLA_ID", plan)).ToList();
                 return rtn;
             }
             catch (Exception)
@@ -1048,8 +1058,7 @@ namespace Services
         {
             try
             {
-                var result = "EXEC SP_PLANSXCOMPANYBYCOM " + com;
-                var rtn = _db.Database.SqlQuery<PlansxCompany>(result).ToList();
+                var rtn = _db.Database.SqlQuery<PlansxCompany>("SP_PLANSXCOMPANYBYCOM @COM_ID", new SqlParameter("COM_ID", com)).ToList();
                 return rtn;
             }
             catch (Exception)
@@ -1086,6 +1095,317 @@ namespace Services
                         new SqlParameter("@PLA_ID", plan),
                         new SqlParameter("@COM_ID", company),
                         new SqlParameter("@PARENTID", parent));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        //CRUD PropertiesxUser
+
+        public List<PropertiesxUser> GetPropertiesxUser()
+        {
+            try
+            {
+                var result = "EXEC SP_PROPERTIESXUSERGEN";
+                var rtn = _db.Database.SqlQuery<PropertiesxUser>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<PropertiesxUser>();
+            }
+        }
+
+        public List<PropertiesxUser> GetPropertiesxUserByUser(string user)
+        {
+            try
+            {
+                var result = "EXEC SP_PROPERTIESXUSERBYUSER " + user;
+                var rtn = _db.Database.SqlQuery<PropertiesxUser>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<PropertiesxUser>();
+            }
+        }
+
+        public List<PropertiesxUser> GetPropertiesxUserByEmail(string email)
+        {
+            try
+            {
+                var result = "EXEC SP_PROPERTIESXUSERBYEMAIL " + email;
+                var rtn = _db.Database.SqlQuery<PropertiesxUser>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<PropertiesxUser>();
+            }
+        }
+
+        public int PostPropertiesxUserCreate(string user, string company, string email, string password)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_PROPERTIESXUSERCRE @USE_ID, @COM_ID, @USE_EMAIL, @USE_PASSWORD",
+                        new SqlParameter("@USE_ID", user),
+                        new SqlParameter("@COM_ID", company),
+                        new SqlParameter("@USE_EMAIL", email),
+                        new SqlParameter("@USE_PASSWORD", password));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        public int PutPropertiesxUserUpdate(int id, string user, string company, string email, string password)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_PROPERTIESXUSERUPD @ID, @USE_ID, @COM_ID, @USE_EMAIL, @USE_PASSWORD",
+                        new SqlParameter("@ID", id),
+                        new SqlParameter("@USE_ID", user),
+                        new SqlParameter("@COM_ID", company),
+                        new SqlParameter("@USE_EMAIL", email),
+                        new SqlParameter("@USE_PASSWORD", password));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        //CRUD Role
+
+        public List<Role> GetRole()
+        {
+            try
+            {
+                var result = "EXEC SP_ROLEGEN";
+                var rtn = _db.Database.SqlQuery<Role>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<Role>();
+            }
+        }
+
+        public List<Role> GetRoleById(string id)
+        {
+            try
+            {
+                var rtn = _db.Database.SqlQuery<Role>("SP_ROLEBYID @ID", new SqlParameter("ID", id)).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<Role>();
+            }
+        }
+
+        public List<Role> GetRoleByName(string name)
+        {
+            try
+            {
+                var result = "EXEC SP_ROLEBYNAME " + name;
+                var rtn = _db.Database.SqlQuery<Role>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<Role>();
+            }
+        }
+
+        public int PostRoleCreate(string name, bool active)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_ROLECRE @NOMBRE, @ACTIVE",
+                        new SqlParameter("@NOMBRE", name),
+                        new SqlParameter("@ACTIVE", active));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        public int PutRoleUpdate(string id, string name, bool active)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_ROLEUPD @ID, @NOMBRE, @ACTIVE",
+                        new SqlParameter("@ID", id),
+                        new SqlParameter("@NOMBRE", name),
+                        new SqlParameter("@ACTIVE", active));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        //CRUD State
+
+        public List<State> GetState()
+        {
+            try
+            {
+                var result = "EXEC SP_STATEGEN";
+                var rtn = _db.Database.SqlQuery<State>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<State>();
+            }
+        }
+
+        public List<State> GetStateByName(string name)
+        {
+            try
+            {
+                var result = "EXEC SP_STATEBYNAME " + name;
+                var rtn = _db.Database.SqlQuery<State>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<State>();
+            }
+        }
+
+        public List<State> GetStateByCou(int country)
+        {
+            try
+            {
+                var result = "EXEC SP_STATEBYCOU " + country;
+                var rtn = _db.Database.SqlQuery<State>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<State>();
+            }
+        }
+
+        public int PostStateCreate(string name, int country)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_STATECRE @NAME, @COU_ID",
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@COU_ID", country));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        public int PutStateUpdate(int id, string name, int country)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_STATEUPD @ID, @NAME, @COU_ID",
+                        new SqlParameter("@ID", id),
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@COU_ID", country));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        //CRUD Users
+
+        public List<Users> GetUsers()
+        {
+            try
+            {
+                var result = "EXEC SP_USERSGEN";
+                var rtn = _db.Database.SqlQuery<Users>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<Users>();
+            }
+        }
+
+        public List<Users> GetUsersByName(string name)
+        {
+            try
+            {
+                var result = "EXEC SP_USERSBYNAME " + name;
+                var rtn = _db.Database.SqlQuery<Users>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<Users>();
+            }
+        }
+
+        public int PostUsersCreate(string name, string surname, string phone, DateTime birthday, bool active)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_USERSCRE @NAME, @SURNAME, @PHONE, @BIRTHDAY, @ACTIVE",
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@SURNAME", surname),
+                        new SqlParameter("@PHONE", phone),
+                        new SqlParameter("@BIRTHDAY", birthday),
+                        new SqlParameter("@ACTIVE", active));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        public int PutUsersUpdate(string id, string name, string surname, string phone, DateTime birthday, bool active)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_USERSUPD @ID, @NAME, @SURNAME, @PHONE, @BIRTHDAY, @ACTIVE",
+                        new SqlParameter("@ID", id),
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@SURNAME", surname),
+                        new SqlParameter("@PHONE", phone),
+                        new SqlParameter("@BIRTHDAY", birthday),
+                        new SqlParameter("@ACTIVE", active));
                 return result;
             }
             catch (Exception e)
