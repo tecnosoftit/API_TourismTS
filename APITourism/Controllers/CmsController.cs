@@ -178,6 +178,15 @@ namespace APITourism.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getplandetailbyaco/" + "{aco}")]
+        public IHttpActionResult GetPlanDetailByAco(int aco)
+        {
+            var result = _cms.GetPlanDetailByAco(aco);
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
         [HttpPost]
         [Route("api/cms/postplandetailcreate")]
         public IHttpActionResult PostPlanDetailCreate([FromBody] PlanDetail value)
@@ -325,10 +334,10 @@ namespace APITourism.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/cms/getcitesxplanbypla/" + "{plan}")] //Pendiente revisar
-        public IHttpActionResult GetCitesxPlanByPla(Guid plan)
+        [Route("api/cms/getcitesxplanbypla/" + "{plan}")]
+        public IHttpActionResult GetCitesxPlanByPla(string plan)
         {
-            return Ok(_cms.GetCitesxPlanByPla(plan.ToString()));
+            return Ok(_cms.GetCitesxPlanByPla(plan));
         }
 
         [AllowAnonymous]
@@ -420,7 +429,7 @@ namespace APITourism.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/cms/getcompanybyid/" + "{id}")] // Pendiente revisar
+        [Route("api/cms/getcompanybyid/" + "{id}")]
         public IHttpActionResult GetCompanyById(string id)
         {
             var result = _cms.GetCompanyById(id);
@@ -488,10 +497,10 @@ namespace APITourism.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/cms/getcompanypropertiesbycom/" + "{com}")] //Pendiente revisar
+        [Route("api/cms/getcompanypropertiesbycom/" + "{com}")]
         public IHttpActionResult GetCompanyPropertiesByCom(string com)
         {
-            return Ok(_cms.GetCompanyByNit(com));
+            return Ok(_cms.GetCompanyPropertiesByCom(com));
         }
 
         [AllowAnonymous]
@@ -582,7 +591,7 @@ namespace APITourism.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/cms/getplansxcompanybyplan/" + "{plan}")] //Pendiente revisar
+        [Route("api/cms/getplansxcompanybyplan/" + "{plan}")]
         public IHttpActionResult GetPlansxCompanyByPlan(string plan)
         {
             return Ok(_cms.GetPlansxCompanyByPlan(plan));
@@ -590,7 +599,7 @@ namespace APITourism.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/cms/getplansxcompanybycom/" + "{com}")] //Pendinete revisar
+        [Route("api/cms/getplansxcompanybycom/" + "{com}")]
         public IHttpActionResult GetPlansxCompanyByCom(string com)
         {
             return Ok(_cms.GetPlansxCompanyByCom(com));
@@ -610,6 +619,169 @@ namespace APITourism.Controllers
         public IHttpActionResult PutPlansxCompanyUpdate([FromBody] PlansxCompany value)
         {
             return Ok(_cms.PutPlansxCompanyUpdate(value.IDENTIFICATION,value.PLAN_IDENTIFICATION,value.COMPANY_IDENTIFICATION,value.PARENT_IDENTIFICATION));
+        }
+
+        //CRUD PropertiesxUser
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getpropertiesxuser")]
+        public IHttpActionResult GetPropertiesxUser()
+        {
+            return Ok(_cms.GetPropertiesxUser());
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getpropertiesxuserbyuser/" + "{user}")]
+        public IHttpActionResult GetPropertiesxUserByUser(string user)
+        {
+            var result = _cms.GetPropertiesxUserByUser(user);
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getpropertiesxuserbyemail/" + "{email}")]
+        public IHttpActionResult GetPropertiesxUserByEmail(string email)
+        {
+            return Ok(_cms.GetPropertiesxUserByEmail(email));
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/cms/postpropertiesxusercreate")]
+        public IHttpActionResult PostPropertiesxUserCreate([FromBody] PropertiesxUser value)
+        {
+            return Ok(_cms.PostPropertiesxUserCreate(value.USER_IDENTIFICATION,value.COMPANY_IDENTIFICATION,value.EMAIL, value.PASSWORD_));
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        [Route("api/cms/putpropertiesxuserupdate")]
+        public IHttpActionResult PutPropertiesxUserUpdate([FromBody] PropertiesxUser value)
+        {
+            return Ok(_cms.PutPropertiesxUserUpdate(value.IDENTIFICATION,value.USER_IDENTIFICATION, value.COMPANY_IDENTIFICATION, value.EMAIL, value.PASSWORD_));
+        }
+
+        //CRUD Role
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getrole")]
+        public IHttpActionResult GetRole()
+        {
+            return Ok(_cms.GetRole());
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getrolebyid/" + "{id}")]
+        public IHttpActionResult GetRoleById(string id)
+        {
+            var result = _cms.GetRoleById(id);
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getrolebyname/" + "{name}")]
+        public IHttpActionResult GetRoleByName(string name)
+        {
+            return Ok(_cms.GetRoleByName(name));
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/cms/postrolecreate")]
+        public IHttpActionResult PostRoleCreate([FromBody] Role value)
+        {
+            return Ok(_cms.PostRoleCreate(value.NAME_, value.STATUS_));
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        [Route("api/cms/putroleupdate")]
+        public IHttpActionResult PutRoleUpdate([FromBody] Role value)
+        {
+            return Ok(_cms.PutRoleUpdate(value.IDENTIFICATION, value.NAME_, value.STATUS_));
+        }
+
+        //CRUD State
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getstate")]
+        public IHttpActionResult GetState()
+        {
+            return Ok(_cms.GetState());
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getstatebycou/" + "{country}")]
+        public IHttpActionResult GetStateByCou(int country)
+        {
+            var result = _cms.GetStateByCou(country);
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getstatebyname/" + "{name}")]
+        public IHttpActionResult GetStateByName(string name)
+        {
+            return Ok(_cms.GetStateByName(name));
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/cms/poststatecreate")]
+        public IHttpActionResult PostStateCreate([FromBody] State value)
+        {
+            return Ok(_cms.PostStateCreate(value.NAME_, value.COUNTRY_IDENTIFICATION));
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        [Route("api/cms/putstateupdate")]
+        public IHttpActionResult PutStateUpdate([FromBody] State value)
+        {
+            return Ok(_cms.PutStateUpdate(value.IDENTIFICATION, value.NAME_, value.COUNTRY_IDENTIFICATION));
+        }
+
+        //CRUD Users
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getusers")]
+        public IHttpActionResult GetUsers()
+        {
+            return Ok(_cms.GetUsers());
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getusersbyname/" + "{name}")]
+        public IHttpActionResult GetUsersByName(string name)
+        {
+            return Ok(_cms.GetUsersByName(name));
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/cms/postuserscreate")]
+        public IHttpActionResult PostUsersCreate([FromBody] Users value)
+        {
+            return Ok(_cms.PostUsersCreate(value.NAME_, value.SURNAME, value.PHONE, value.BIRTHDAY,value.STATUS_));
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        [Route("api/cms/putusersupdate")]
+        public IHttpActionResult PutStateUpdate([FromBody] Users value)
+        {
+            return Ok(_cms.PutUsersUpdate(value.IDENTIFICATION, value.NAME_, value.SURNAME, value.PHONE, value.BIRTHDAY, value.STATUS_));
         }
     }
 

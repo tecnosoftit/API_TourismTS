@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ViewModel.General
 {
-    class State
+    public class State
     {
+        public int IDENTIFICATION { get; set; }
+        public string NAME_ { get; set; }
+        public int COUNTRY_IDENTIFICATION { get; set; }
+        public string COUNTRY { get; set; }
     }
 }

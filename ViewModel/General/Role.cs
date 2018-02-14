@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ViewModel.General
 {
-    class Role
+    public class Role
     {
+        public string IDENTIFICATION { get; set; }
+        public string NAME_ { get; set; }
+        public bool STATUS_ { get; set; }
     }
 }
