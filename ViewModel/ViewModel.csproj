@@ -53,9 +53,12 @@
     <Compile Include="General\PlansxCompany.cs" />
     <Compile Include="General\PropertiesxUser.cs" />
     <Compile Include="General\Role.cs" />
+    <Compile Include="General\Roles.cs" />
     <Compile Include="General\State.cs" />
     <Compile Include="General\Types.cs" />
+    <Compile Include="General\User.cs" />
     <Compile Include="General\Users.cs" />
+    <Compile Include="General\UserTransport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

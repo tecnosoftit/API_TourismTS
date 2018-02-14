@@ -13,3 +13,13 @@ C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Model\bin\Debug\EntityFramewo
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Model\obj\Debug\Model.dll
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Model\obj\Debug\Model.pdb
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Debug\Model.dll.config
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Debug\Model.dll
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Debug\Model.pdb
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Debug\EntityFramework.dll
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Debug\EntityFramework.xml
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\TecnoSoftIT\API_TourismTS\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\TecnoSoftIT\API_TourismTS\Model\obj\Debug\Model.dll
+D:\TecnoSoftIT\API_TourismTS\Model\obj\Debug\Model.pdb
