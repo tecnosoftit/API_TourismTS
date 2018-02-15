@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using ViewModel.General;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace Services
 {
@@ -573,7 +574,7 @@ namespace Services
 
         public List<CitesxPlan> GetCitesxPlanByPla(string plan)
         {
-            
+
             try
             {
                 var rtn = _db.Database.SqlQuery<CitesxPlan>("SP_CITESXPLANBYPLA @PLA", new SqlParameter("PLA", plan)).ToList();
@@ -963,7 +964,7 @@ namespace Services
                 return new List<Country>();
             }
         }
-        
+
         public int PostCountryCreate(string name)
         {
             try
@@ -1411,6 +1412,26 @@ namespace Services
             catch (Exception e)
             {
                 return 0;
+            }
+        }
+
+        //CompanyProperties
+
+        public object GetCompanyInformation(string url)
+        {
+            try
+            {
+                var query = "EXEC SP_GETCOMPANYINFORMATION '" + url + "'";
+                var cpInfo = _db.Database.SqlQuery<dynamic>(query);
+                foreach (var item in cpInfo)
+                {
+
+                }
+                return cpInfo;
+            }
+            catch (Exception e)
+            {
+                return new string[1];
             }
         }
     }

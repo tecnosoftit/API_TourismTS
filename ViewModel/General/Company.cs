@@ -12,5 +12,6 @@ namespace ViewModel.General
         public string NAME_ { get; set; }
         public string DESCRIPTION_ { get; set; }
         public string NIT { get; set; }
+        public string URL_ { get; set; }
     }
 }

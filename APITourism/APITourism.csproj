@@ -252,6 +252,7 @@
     <Compile Include="AuthServerProvider.cs" />
     <Compile Include="Controllers\CmsController.cs" />
     <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\GeneralPurposeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

@@ -50,9 +50,6 @@ namespace APITourism.Controllers
         [Route("api/cms/postimagecreate")]
         public IHttpActionResult PostImageCreate([FromBody] Images value)
         {
-            //var datecre = DateTime.Parse("2018-01-01 13:01:02");
-            //var datemod = DateTime.Parse("2018-01-30 10:01:58");
-            //return Ok(_cms.PostImagesCreate("Logo1", "Imagen principal", false, datecre, datemod));
             return Ok(_cms.PostImagesCreate(value.NAME_, value.DESCRIPTION_, value.STATUS_, value.CREATION, value.MODIFICATION));
         }
 
@@ -61,8 +58,6 @@ namespace APITourism.Controllers
         [Route("api/cms/putimageupdate")]
         public IHttpActionResult PutImageUpdate([FromBody] Images value)
         {
-            //var datemod = DateTime.Parse("2018-02-03 11:20:58");
-            //return Ok(_cms.PutImagesUpdate(9, "Logo2", "Imagen Favicon", true, datemod));
             return Ok(_cms.PutImagesUpdate(value.IDENTIFICATION, value.NAME_, value.DESCRIPTION_, value.STATUS_, value.MODIFICATION));
         }
 
@@ -142,9 +137,6 @@ namespace APITourism.Controllers
         [Route("api/cms/postclasificationtypecreate")]
         public IHttpActionResult PostClasificationTypeCreate([FromBody] ClasificationType value)
         {
-            //var datecre = DateTime.Parse("2018-01-01 13:01:02");
-            //var datemod = DateTime.Parse("2018-01-30 10:01:58");
-            //return Ok(_cms.PostClasificationTypeCreate("Jeisson", "Gordito Tierno", true, datecre, datemod));
             return Ok(_cms.PostClasificationTypeCreate(value.NAME_, value.DESCRIPTION_, value.STATUS_, value.CREATION, value.MODIFICATION));
         }
 
@@ -153,8 +145,6 @@ namespace APITourism.Controllers
         [Route("api/cms/putclasificationtypeupdate")]
         public IHttpActionResult PutClasificationTypeUpdate([FromBody] ClasificationType value)
         {
-            //var datemod = DateTime.Parse("2018-02-03 11:20:58");
-            //return Ok(_cms.PutClasificationTypeUpdate(3, "Daniel", "Primo de Omaira", false, datemod));
             return Ok(_cms.PutClasificationTypeUpdate(value.IDENTIFICATION,value.NAME_,value.DESCRIPTION_,value.STATUS_,value.MODIFICATION));
         }
 
@@ -191,9 +181,6 @@ namespace APITourism.Controllers
         [Route("api/cms/postplandetailcreate")]
         public IHttpActionResult PostPlanDetailCreate([FromBody] PlanDetail value)
         {
-            //var datecre = DateTime.Parse("2018-01-01 13:01:02");
-            //var datemod = DateTime.Parse("2018-01-30 10:01:58");
-            //return Ok(_cms.PostPlanDetailCreate(2, 6, "730000", "Piscina-Minibar", "Wifi", "Jum, sabra Dios", "Lero", "Lero", datecre, datemod));
             return Ok(_cms.PostPlanDetailCreate(value.PLAN_IDENTIFICATION, value.ACOMODATION_TYPE, value.PRICE, value.INCLUDED, value.NOT_INCLUDED, value.TEVELER_INFO, value.POLICIES, value.CONDITIONS, value.CREATION, value.MODIFICATION));
         }
 
@@ -202,8 +189,6 @@ namespace APITourism.Controllers
         [Route("api/cms/putplandetailupdate")]
         public IHttpActionResult PutPlanDetailUpdate([FromBody] PlanDetail value)
         {
-            //var datemod = DateTime.Parse("2018-02-06 14:47:50");
-            //return Ok(_cms.PutPlanDetailUpdate(8, 1, 6, "750000", "Piscina-Wifi-Parqueadero Doble", "Mini bar-Toboganes", "Ni puerca vida que es esto", "Cheverongo", "Ninguna", datemod));
             return Ok(_cms.PutPlanDetailUpdate(value.IDENTIFICATION, value.PLAN_IDENTIFICATION, value.ACOMODATION_TYPE, value.PRICE, value.INCLUDED, value.NOT_INCLUDED, value.TEVELER_INFO, value.POLICIES, value.CONDITIONS, value.MODIFICATION));
         }
 
@@ -240,9 +225,6 @@ namespace APITourism.Controllers
         [Route("api/cms/postplancreate")]
         public IHttpActionResult PostPlanCreate([FromBody] Plans value)
         {
-            //var datecre = DateTime.Parse("2018-01-01 13:01:02");
-            //var datemod = DateTime.Parse("2018-01-30 10:01:58");
-            //return Ok(_cms.PostPlanCreate("Vacaciones", "Vacaciones de Octubre", true, 2, datecre, datemod));
             return Ok(_cms.PostPlanCreate(value.NAMES,value.DESCRIPTIONS,value.STATUS_,value.TYPE_,value.CREATION,value.MODIFICATION));
         }
 
@@ -251,8 +233,6 @@ namespace APITourism.Controllers
         [Route("api/cms/putplanupdate")]
         public IHttpActionResult PutPlanUpdate([FromBody] Plans value)
         {
-            //var datemod = DateTime.Parse("2018-02-03 11:20:58");
-            //return Ok(_cms.PutPlanUpdate(1, "Planzasazo", "Super Wow!", true, 1, datemod));
             return Ok(_cms.PutPlanUpdate(value.IDENTIFICATION,value.NAMES,value.DESCRIPTIONS,value.STATUS_,value.TYPE_,value.MODIFICATION));
         }
 
@@ -289,9 +269,6 @@ namespace APITourism.Controllers
         [Route("api/cms/posttypecreate")]
         public IHttpActionResult PostTypeCreate([FromBody] Types value)
         {
-            //var datecre = DateTime.Parse("2018-02-07 13:01:02");
-            //var datemod = DateTime.Parse("2018-02-07 10:01:58");
-            //return Ok(_cms.PostTypeCreate("Cambio", "Cambio prueba", "www.prueba.com.co", 3, true, datecre, datemod));
             return Ok(_cms.PostTypeCreate(value.NAMES,value.DESCRIPTIONS,value.IMAGE_URL,value.TYPE_CLASIFICATION,value.STATUS_,value.CREATION,value.MODIFICATION));
         }
 
@@ -300,8 +277,6 @@ namespace APITourism.Controllers
         [Route("api/cms/puttypeupdate")]
         public IHttpActionResult PutTypeUpdate([FromBody] Types value)
         {
-            //var datemod = DateTime.Parse("2018-02-07 11:20:58");
-            //return Ok(_cms.PutTypeUpdate(4, "Neron1", "Nombresito", "www.neron.com.co", 2, true, datemod));
             return Ok(_cms.PutTypeUpdate(value.IDENTIFICATION,value.NAMES,value.DESCRIPTIONS,value.IMAGE_URL,value.TYPE_CLASIFICATION,value.STATUS_,value.MODIFICATION));
         }
 
