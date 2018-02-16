@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using ViewModel.General;
 using System.Data.SqlClient;
+using System.Dynamic;
 using System.Reflection;
 
 namespace Services
@@ -1417,21 +1418,31 @@ namespace Services
 
         //CompanyProperties
 
-        public object GetCompanyInformation(string url)
+        public IDictionary<string, string> GetCompanyInformation(string url)
         {
             try
             {
+                var rtn = new Dictionary<string, string>();
                 var query = "EXEC SP_GETCOMPANYINFORMATION '" + url + "'";
-                var cpInfo = _db.Database.SqlQuery<dynamic>(query);
-                foreach (var item in cpInfo)
+                using (var connection = new SqlConnection(_db.Database.Connection.ConnectionString))
                 {
-
+                    var command = new SqlCommand(query, connection); try
+                    {
+                        connection.Open();
+                        var reader = command.ExecuteReader();
+                        while (reader.Read()) for (var i = 0; i <= reader.FieldCount; i++) rtn.Add(reader.GetName(i), reader[i].ToString());
+                        reader.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        //
+                    }
                 }
-                return cpInfo;
+                return rtn;
             }
             catch (Exception e)
             {
-                return new string[1];
+                return null;
             }
         }
     }

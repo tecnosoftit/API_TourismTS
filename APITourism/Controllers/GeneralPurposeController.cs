@@ -13,13 +13,6 @@ using System.Reflection;
 
 namespace APITourism.Controllers
 {
-    public enum StringSearchOption
-    {
-        StartsWith,
-        Contains,
-        EndsWith
-    }
-    [Route("api/generalpurpose/")]
     public class GeneralPurposeController : ApiController
     {
         private readonly Cms _cms = new Cms();
@@ -29,10 +22,7 @@ namespace APITourism.Controllers
         [Route("api/generalpurpose/getcompanyinformation/" + "{url}")]
         public IHttpActionResult GetCompanyInformation(string url)
         {
-            var company = "ariesik";
-            List<dynamic> Information = new List<dynamic>();
-            var cpInfo = _cms.GetCompanyInformation(company);            
-            return Ok("");
+            return Ok(_cms.GetCompanyInformation(url));
         }
     }
 }
