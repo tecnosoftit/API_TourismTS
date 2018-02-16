@@ -18,7 +18,7 @@ namespace Services
                 ? new User
                 {
                     Name = "pepito",
-                    UserName = "Pepito",
+                    User_name = "Pepito",
                     UserLastname = "Prueba"
                 }
                 : null;
