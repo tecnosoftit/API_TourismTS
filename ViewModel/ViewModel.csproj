@@ -45,6 +45,7 @@
     <Compile Include="General\ClasificationType.cs" />
     <Compile Include="General\Company.cs" />
     <Compile Include="General\CompanyProperties.cs" />
+    <Compile Include="General\CompanyPropertiesRq.cs" />
     <Compile Include="General\Country.cs" />
     <Compile Include="General\Images.cs" />
     <Compile Include="General\ImagesPerPlan.cs" />

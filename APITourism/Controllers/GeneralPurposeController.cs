@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using ViewModel.General;
+﻿using System.Web.Http;
 using Services;
-using System.Collections;
-using System.Dynamic;
-using System.IO;
-using System.Reflection;
+using ViewModel.General;
 
 namespace APITourism.Controllers
 {
@@ -18,11 +9,11 @@ namespace APITourism.Controllers
         private readonly Cms _cms = new Cms();
 
         [AllowAnonymous]
-        [HttpGet]
-        [Route("api/generalpurpose/getcompanyinformation/" + "{url}")]
-        public IHttpActionResult GetCompanyInformation(string url)
+        [HttpPost]
+        [Route("api/generalpurpose/getcompanyinformation/")]
+        public IHttpActionResult GetCompanyInformation(CompanyPropertiesRq company)
         {
-            return Ok(_cms.GetCompanyInformation(url));
+            return Ok(_cms.GetCompanyInformation(company.Url));
         }
     }
 }
