@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 using ViewModel.General;
 
 namespace Services
@@ -10,33 +11,27 @@ namespace Services
     public class Security
     {
         private readonly General _ser = new General();
+        private readonly TecnoTourismEntities _db = new TecnoTourismEntities();
 
-        public User GetUser(string username, string password)
-        {
-            var pswd = _ser.GetMd5Password(password);
-            return username.ToUpper().Equals("ADMIN") && password.ToUpper().Equals("ADMIN")
-                ? new User
-                {
-                    Name = "pepito",
-                    User_name = "Pepito",
-                    UserLastname = "Prueba"
-                }
-                : null;
-        }
-
-        public List<Roles> GetRoles(string uId)
+        public User GetUser(string username, string password, string companyId)
         {
             try
             {
-                return new List<Roles>
-                {
-                    new Roles
-                    {
-                        Role = "ADMIN",
-                        RoleId = 1,
-                        RoleLevel = 100
-                    }
-                };
+                var query = "EXEC SP_LOGIN '" + username + "', '" + password + "', '" + companyId + "'";
+                return _db.Database.SqlQuery<User>(query).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public List<Roles> GetRoles(string uId, string companyId)
+        {
+            try
+            {
+                var query = "EXEC SP_GETROLESPERUSER '" + uId + "', '" + companyId + "'";
+                return _db.Database.SqlQuery<Roles>(query).ToList();
             }
             catch (Exception)
             {

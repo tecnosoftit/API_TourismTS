@@ -15,7 +15,7 @@ namespace APITourism.Controllers
         [Route("api/data/forall")]
         public IHttpActionResult Get()
         {
-            return Ok("Now server time is: " + DateTime.Now.ToString());
+            return Ok("Now server time is: " + DateTime.Now);
         }
 
         [Authorize]
@@ -27,7 +27,7 @@ namespace APITourism.Controllers
             return Ok("Hello " + identity.Name);
         }
 
-        [Authorize(Roles = "ADMIN")]
+        [Authorize(Roles = "SUPERADMIN, SITEADMIN")]
         [HttpGet]
         [Route("api/data/authorize")]
         public IHttpActionResult GetForAdmin()

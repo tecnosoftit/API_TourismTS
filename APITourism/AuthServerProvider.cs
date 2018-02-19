@@ -17,17 +17,17 @@ namespace APITourism
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var user = _sec.GetUser(context.UserName, context.Password);
+            var parameters = context.UserName.Split('|');
+            var user = _sec.GetUser(parameters[0], context.Password, parameters[1]);
             if (user != null)
             {
-                if (string.IsNullOrEmpty(user.ProfilePicture)) user.ProfilePicture = "http://coderthemes.com/minton_2.3/material/assets/images/users/avatar-2.jpg";
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                var roles = _sec.GetRoles(user.UserId);
+                var roles = _sec.GetRoles(user.Use_ID, parameters[1]);
                 foreach (var item in roles)
                 {
-                    identity.AddClaim(new Claim(ClaimTypes.Role, item.Role));
+                    identity.AddClaim(new Claim(ClaimTypes.Role, item.Rol_name));
                 }
-                identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName, user.UserLastname));
+                identity.AddClaim(new Claim(ClaimTypes.Name, user.Use_name, user.Use_surname));
                 identity.AddClaim(new Claim("UserInfo", JsonConvert.SerializeObject(user)));
                 identity.AddClaim(new Claim("Roles", JsonConvert.SerializeObject(roles)));
                 context.Validated(identity);

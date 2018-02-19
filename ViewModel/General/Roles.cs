@@ -8,8 +8,8 @@ namespace ViewModel.General
 {
     public class Roles
     {
-        public int RoleId { get; set; }
-        public string Role { get; set; }
-        public int RoleLevel { get; set; }
+        public int Rol_ID { get; set; }
+        public string Rol_name { get; set; }
+        public bool Rol_active { get; set; }
     }
 }
