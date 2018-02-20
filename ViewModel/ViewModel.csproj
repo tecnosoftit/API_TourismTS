@@ -49,6 +49,7 @@
     <Compile Include="General\Country.cs" />
     <Compile Include="General\Images.cs" />
     <Compile Include="General\ImagesPerPlan.cs" />
+    <Compile Include="General\Menu.cs" />
     <Compile Include="General\PlanDetail.cs" />
     <Compile Include="General\Plans.cs" />
     <Compile Include="General\PlansxCompany.cs" />

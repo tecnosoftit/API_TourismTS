@@ -39,6 +39,19 @@ namespace Services
             }
         }
 
+        public List<Menu> GetMenu(string uId, string companyId)
+        {
+            try
+            {
+                var query = "EXEC SP_PERMISSIONS '" + uId + "', '" + companyId + "'";
+                return _db.Database.SqlQuery<Menu>(query).ToList();
+            }
+            catch (Exception)
+            {
+                return new List<Menu>();
+            }
+        }
+
         public string ResetAccount(UserTransport user)
         {
             try

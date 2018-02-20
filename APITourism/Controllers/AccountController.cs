@@ -22,5 +22,15 @@ namespace APITourism.Controllers
             var usr = identity.Claims.Where(x => x.Type.Equals("UserInfo")).Select(c => c.Value).FirstOrDefault();
             return Ok(JsonConvert.DeserializeObject<User>(usr));
         }
+
+        [Authorize]
+        [HttpGet]
+        [Route("api/account/GetUserMenu")]
+        public IHttpActionResult GetUserMenu()
+        {
+            var identity = (ClaimsIdentity)User.Identity;
+            var usr = identity.Claims.Where(x => x.Type.Equals("Menu")).Select(c => c.Value).FirstOrDefault();
+            return Ok(JsonConvert.DeserializeObject<List<Menu>>(usr));
+        }
     }
 }

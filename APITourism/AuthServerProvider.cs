@@ -27,9 +27,12 @@ namespace APITourism
                 {
                     identity.AddClaim(new Claim(ClaimTypes.Role, item.Rol_name));
                 }
+
+                var menu = _sec.GetMenu(user.Use_ID, parameters[1]);
                 identity.AddClaim(new Claim(ClaimTypes.Name, user.Use_name, user.Use_surname));
                 identity.AddClaim(new Claim("UserInfo", JsonConvert.SerializeObject(user)));
                 identity.AddClaim(new Claim("Roles", JsonConvert.SerializeObject(roles)));
+                identity.AddClaim(new Claim("Menu", JsonConvert.SerializeObject(menu)));
                 context.Validated(identity);
             }
             else
