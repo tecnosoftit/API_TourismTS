@@ -8,13 +8,13 @@ C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\bin\Debug\ViewModel
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\obj\Debug\ViewModel.dll
 C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\ViewModel\obj\Debug\ViewModel.pdb
-D:\TecnoSoftIT\API_TourismTS\ViewModel\bin\Debug\ViewModel.dll
-D:\TecnoSoftIT\API_TourismTS\ViewModel\bin\Debug\ViewModel.pdb
-D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
-D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.dll
-D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.pdb
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\ViewModel\bin\Debug\ViewModel.dll
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\ViewModel\bin\Debug\ViewModel.pdb
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\ViewModel\obj\Debug\ViewModel.dll
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\ViewModel\obj\Debug\ViewModel.pdb
+D:\TecnoSoftIT\API_TourismTS\ViewModel\bin\Debug\ViewModel.dll
+D:\TecnoSoftIT\API_TourismTS\ViewModel\bin\Debug\ViewModel.pdb
+D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
+D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.dll
+D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.pdb

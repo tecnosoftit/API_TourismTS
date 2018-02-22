@@ -1221,6 +1221,21 @@ namespace Services
             }
         }
 
+        public bool CreateUser(CreateUser usr)
+        {
+            try
+            {
+                var result = "EXEC SP_CREATEUSER '" + usr.FistName + "', '" + usr.SurName + "', '" + usr.Phone + "', '" + usr.Birthday + "', '" + usr.CompanyId + "', '" +
+                             usr.Email + "', '" + usr.Password + "', '" + usr.Roles + "'";
+                var rtn = _db.Database.SqlQuery<object>(result).FirstOrDefault();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         public List<Role> GetRoleById(int id)
         {
             try
