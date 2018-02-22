@@ -641,7 +641,7 @@ namespace APITourism.Controllers
 
         //CRUD Role
 
-        [AllowAnonymous]
+        [Authorize(Roles = "SUPERADMIN, SITEADMIN")]
         [HttpGet]
         [Route("api/cms/getrole")]
         public IHttpActionResult GetRole()
@@ -652,7 +652,7 @@ namespace APITourism.Controllers
         [AllowAnonymous]
         [HttpGet]
         [Route("api/cms/getrolebyid/" + "{id}")]
-        public IHttpActionResult GetRoleById(string id)
+        public IHttpActionResult GetRoleById(int id)
         {
             var result = _cms.GetRoleById(id);
             return Ok(result);

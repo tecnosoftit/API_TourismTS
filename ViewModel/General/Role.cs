@@ -8,7 +8,7 @@ namespace ViewModel.General
 {
     public class Role
     {
-        public string IDENTIFICATION { get; set; }
+        public int IDENTIFICATION { get; set; }
         public string NAME_ { get; set; }
         public bool STATUS_ { get; set; }
     }

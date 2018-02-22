@@ -1204,7 +1204,7 @@ namespace Services
             }
         }
 
-        public List<Role> GetRoleById(string id)
+        public List<Role> GetRoleById(int id)
         {
             try
             {
@@ -1248,7 +1248,7 @@ namespace Services
             }
         }
 
-        public int PutRoleUpdate(string id, string name, bool active)
+        public int PutRoleUpdate(int id, string name, bool active)
         {
             try
             {

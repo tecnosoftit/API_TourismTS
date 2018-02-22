@@ -531,3 +531,4 @@ D:\TecnoSoftIT\API_TourismTS\APITourism\bin\es\System.Web.Optimization.resources
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.csprojResolveAssemblyReference.cache
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.pdb
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\APITourism\bin\Microsoft.Owin.Security.Cookies.xml
