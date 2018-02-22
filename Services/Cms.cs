@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using ViewModel.General;
 using System.Data.SqlClient;
 using System.Dynamic;
 using System.Reflection;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Services
 {
@@ -59,7 +61,8 @@ namespace Services
             }
         }
 
-        public int PostImagesCreate(string name, string description, bool active, DateTime creation, DateTime modification)
+        public int PostImagesCreate(string name, string description, bool active, DateTime creation,
+            DateTime modification)
         {
             try
             {
@@ -219,7 +222,8 @@ namespace Services
             }
         }
 
-        public int PostClasificationTypeCreate(string name, string description, bool active, DateTime creation, DateTime modification)
+        public int PostClasificationTypeCreate(string name, string description, bool active, DateTime creation,
+            DateTime modification)
         {
             try
             {
@@ -239,7 +243,8 @@ namespace Services
             }
         }
 
-        public int PutClasificationTypeUpdate(int id, string name, string description, bool active, DateTime modification)
+        public int PutClasificationTypeUpdate(int id, string name, string description, bool active,
+            DateTime modification)
         {
             try
             {
@@ -303,7 +308,8 @@ namespace Services
             }
         }
 
-        public int PostPlanDetailCreate(int id, int acomodation, string price, string included, string notincluded, string traveler, string policies, string conditions, DateTime creation, DateTime modification)
+        public int PostPlanDetailCreate(int id, int acomodation, string price, string included, string notincluded,
+            string traveler, string policies, string conditions, DateTime creation, DateTime modification)
         {
             try
             {
@@ -329,7 +335,8 @@ namespace Services
             }
         }
 
-        public int PutPlanDetailUpdate(int id, int plaiid, int acomodation, string price, string included, string notincluded, string traveler, string policies, string conditions, DateTime modification)
+        public int PutPlanDetailUpdate(int id, int plaiid, int acomodation, string price, string included,
+            string notincluded, string traveler, string policies, string conditions, DateTime modification)
         {
             try
             {
@@ -399,7 +406,8 @@ namespace Services
             }
         }
 
-        public int PostPlanCreate(string name, string description, bool active, int type, DateTime creation, DateTime modification)
+        public int PostPlanCreate(string name, string description, bool active, int type, DateTime creation,
+            DateTime modification)
         {
             try
             {
@@ -485,7 +493,8 @@ namespace Services
             }
         }
 
-        public int PostTypeCreate(string name, string description, string url, int claid, bool active, DateTime creation, DateTime modification)
+        public int PostTypeCreate(string name, string description, string url, int claid, bool active,
+            DateTime creation, DateTime modification)
         {
             try
             {
@@ -507,7 +516,8 @@ namespace Services
             }
         }
 
-        public int PutTypeUpdate(int id, string name, string description, string url, int claid, bool active, DateTime modification)
+        public int PutTypeUpdate(int id, string name, string description, string url, int claid, bool active,
+            DateTime modification)
         {
             try
             {
@@ -578,7 +588,8 @@ namespace Services
 
             try
             {
-                var rtn = _db.Database.SqlQuery<CitesxPlan>("SP_CITESXPLANBYPLA @PLA", new SqlParameter("PLA", plan)).ToList();
+                var rtn = _db.Database.SqlQuery<CitesxPlan>("SP_CITESXPLANBYPLA @PLA", new SqlParameter("PLA", plan))
+                    .ToList();
                 return rtn;
             }
             catch (Exception e)
@@ -876,7 +887,9 @@ namespace Services
         {
             try
             {
-                var rtn = _db.Database.SqlQuery<CompanyProperties>("SP_COMPANYPROPERTIESBYCOM @COM_ID", new SqlParameter("COM_ID", com)).ToList();
+                var rtn = _db.Database
+                    .SqlQuery<CompanyProperties>("SP_COMPANYPROPERTIESBYCOM @COM_ID", new SqlParameter("COM_ID", com))
+                    .ToList();
                 return rtn;
             }
             catch (Exception)
@@ -1047,7 +1060,9 @@ namespace Services
         {
             try
             {
-                var rtn = _db.Database.SqlQuery<PlansxCompany>("SP_PLANSXCOMPANYBYPLAN @PLA_ID", new SqlParameter("PLA_ID", plan)).ToList();
+                var rtn = _db.Database
+                    .SqlQuery<PlansxCompany>("SP_PLANSXCOMPANYBYPLAN @PLA_ID", new SqlParameter("PLA_ID", plan))
+                    .ToList();
                 return rtn;
             }
             catch (Exception)
@@ -1060,7 +1075,8 @@ namespace Services
         {
             try
             {
-                var rtn = _db.Database.SqlQuery<PlansxCompany>("SP_PLANSXCOMPANYBYCOM @COM_ID", new SqlParameter("COM_ID", com)).ToList();
+                var rtn = _db.Database
+                    .SqlQuery<PlansxCompany>("SP_PLANSXCOMPANYBYCOM @COM_ID", new SqlParameter("COM_ID", com)).ToList();
                 return rtn;
             }
             catch (Exception)
@@ -1068,6 +1084,7 @@ namespace Services
                 return new List<PlansxCompany>();
             }
         }
+
         public int PostPlansxCompanyCreate(string plan, string company, int parent)
         {
             try
@@ -1204,7 +1221,7 @@ namespace Services
             }
         }
 
-        public List<Role> GetRoleById(string id)
+        public List<Role> GetRoleById(int id)
         {
             try
             {
@@ -1248,7 +1265,7 @@ namespace Services
             }
         }
 
-        public int PutRoleUpdate(string id, string name, bool active)
+        public int PutRoleUpdate(int id, string name, bool active)
         {
             try
             {
@@ -1426,11 +1443,14 @@ namespace Services
                 var query = "EXEC SP_GETCOMPANYINFORMATION '" + url + "'";
                 using (var connection = new SqlConnection(_db.Database.Connection.ConnectionString))
                 {
-                    var command = new SqlCommand(query, connection); try
+                    var command = new SqlCommand(query, connection);
+                    try
                     {
                         connection.Open();
                         var reader = command.ExecuteReader();
-                        while (reader.Read()) for (var i = 0; i <= reader.FieldCount; i++) rtn.Add(reader.GetName(i), reader[i].ToString());
+                        while (reader.Read())
+                            for (var i = 0; i <= reader.FieldCount; i++)
+                                rtn.Add(reader.GetName(i), reader[i].ToString());
                         reader.Close();
                     }
                     catch (Exception ex)
@@ -1443,6 +1463,36 @@ namespace Services
             catch (Exception e)
             {
                 return null;
+            }
+        }
+
+        public class ApplicationUser : IdentityUser
+        {
+            public string FirstName { get; set; }
+            public string Company { get; set; }
+        }
+
+        public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+        {
+
+            public ApplicationDbContext()
+                : base("TecnoTourismEntities", throwIfV1Schema: false)
+            {
+            }
+
+            protected override void OnModelCreating(DbModelBuilder modelBuilder)
+            {
+                base.OnModelCreating(modelBuilder);
+                modelBuilder.Entity<ApplicationUser>()
+                    .ToTable("User");
+                modelBuilder.Entity<IdentityRole>()
+                    .ToTable("Role");
+                modelBuilder.Entity<IdentityUserRole>()
+                    .ToTable("UserRole");
+                modelBuilder.Entity<IdentityUserClaim>()
+                    .ToTable("UserClaim");
+                modelBuilder.Entity<IdentityUserLogin>()
+                    .ToTable("UserLogin");
             }
         }
     }
