@@ -1,0 +1,10 @@
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Release\Model.dll.config
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Release\Model.dll
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Release\Model.pdb
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Release\EntityFramework.dll
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Release\EntityFramework.SqlServer.dll
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Release\EntityFramework.xml
+D:\TecnoSoftIT\API_TourismTS\Model\bin\Release\EntityFramework.SqlServer.xml
+D:\TecnoSoftIT\API_TourismTS\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\TecnoSoftIT\API_TourismTS\Model\obj\Release\Model.dll
+D:\TecnoSoftIT\API_TourismTS\Model\obj\Release\Model.pdb

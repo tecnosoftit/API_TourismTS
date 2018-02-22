@@ -531,3 +531,5 @@ D:\TecnoSoftIT\API_TourismTS\APITourism\bin\es\System.Web.Optimization.resources
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.csprojResolveAssemblyReference.cache
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.pdb
+D:\TecnoSoftIT\API_TourismTS\APITourism\bin\System.Diagnostics.DiagnosticSource.dll
+D:\TecnoSoftIT\API_TourismTS\APITourism\bin\System.Diagnostics.DiagnosticSource.xml

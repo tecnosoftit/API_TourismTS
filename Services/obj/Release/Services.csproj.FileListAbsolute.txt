@@ -1,0 +1,16 @@
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\Services.dll.config
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\Services.dll
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\Services.pdb
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\EntityFramework.dll
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\EntityFramework.SqlServer.dll
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\Model.dll
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\Newtonsoft.Json.dll
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\ViewModel.dll
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\Model.pdb
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\ViewModel.pdb
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\EntityFramework.xml
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\EntityFramework.SqlServer.xml
+D:\TecnoSoftIT\API_TourismTS\Services\bin\Release\Newtonsoft.Json.xml
+D:\TecnoSoftIT\API_TourismTS\Services\obj\Release\Services.csprojResolveAssemblyReference.cache
+D:\TecnoSoftIT\API_TourismTS\Services\obj\Release\Services.dll
+D:\TecnoSoftIT\API_TourismTS\Services\obj\Release\Services.pdb
