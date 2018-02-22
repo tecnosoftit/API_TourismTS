@@ -47,6 +47,7 @@
     <Compile Include="General\CompanyProperties.cs" />
     <Compile Include="General\CompanyPropertiesRq.cs" />
     <Compile Include="General\Country.cs" />
+    <Compile Include="General\CreateUser.cs" />
     <Compile Include="General\Images.cs" />
     <Compile Include="General\ImagesPerPlan.cs" />
     <Compile Include="General\Menu.cs" />

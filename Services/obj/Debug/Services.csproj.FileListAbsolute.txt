@@ -51,3 +51,7 @@ D:\TecnoSoftIT\API_TourismTS\Services\bin\Debug\Newtonsoft.Json.xml
 D:\TecnoSoftIT\API_TourismTS\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 D:\TecnoSoftIT\API_TourismTS\Services\obj\Debug\Services.dll
 D:\TecnoSoftIT\API_TourismTS\Services\obj\Debug\Services.pdb
+C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

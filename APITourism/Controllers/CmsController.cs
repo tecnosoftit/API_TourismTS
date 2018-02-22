@@ -50,7 +50,8 @@ namespace APITourism.Controllers
         [Route("api/cms/postimagecreate")]
         public IHttpActionResult PostImageCreate([FromBody] Images value)
         {
-            return Ok(_cms.PostImagesCreate(value.NAME_, value.DESCRIPTION_, value.STATUS_, value.CREATION, value.MODIFICATION));
+            return Ok(_cms.PostImagesCreate(value.NAME_, value.DESCRIPTION_, value.STATUS_, value.CREATION,
+                value.MODIFICATION));
         }
 
         [AllowAnonymous]
@@ -58,7 +59,8 @@ namespace APITourism.Controllers
         [Route("api/cms/putimageupdate")]
         public IHttpActionResult PutImageUpdate([FromBody] Images value)
         {
-            return Ok(_cms.PutImagesUpdate(value.IDENTIFICATION, value.NAME_, value.DESCRIPTION_, value.STATUS_, value.MODIFICATION));
+            return Ok(_cms.PutImagesUpdate(value.IDENTIFICATION, value.NAME_, value.DESCRIPTION_, value.STATUS_,
+                value.MODIFICATION));
         }
 
         //CRUD ImagesPerplan
@@ -137,7 +139,8 @@ namespace APITourism.Controllers
         [Route("api/cms/postclasificationtypecreate")]
         public IHttpActionResult PostClasificationTypeCreate([FromBody] ClasificationType value)
         {
-            return Ok(_cms.PostClasificationTypeCreate(value.NAME_, value.DESCRIPTION_, value.STATUS_, value.CREATION, value.MODIFICATION));
+            return Ok(_cms.PostClasificationTypeCreate(value.NAME_, value.DESCRIPTION_, value.STATUS_, value.CREATION,
+                value.MODIFICATION));
         }
 
         [AllowAnonymous]
@@ -145,7 +148,8 @@ namespace APITourism.Controllers
         [Route("api/cms/putclasificationtypeupdate")]
         public IHttpActionResult PutClasificationTypeUpdate([FromBody] ClasificationType value)
         {
-            return Ok(_cms.PutClasificationTypeUpdate(value.IDENTIFICATION,value.NAME_,value.DESCRIPTION_,value.STATUS_,value.MODIFICATION));
+            return Ok(_cms.PutClasificationTypeUpdate(value.IDENTIFICATION, value.NAME_, value.DESCRIPTION_,
+                value.STATUS_, value.MODIFICATION));
         }
 
         //CRUD PlanDetail
@@ -181,7 +185,9 @@ namespace APITourism.Controllers
         [Route("api/cms/postplandetailcreate")]
         public IHttpActionResult PostPlanDetailCreate([FromBody] PlanDetail value)
         {
-            return Ok(_cms.PostPlanDetailCreate(value.PLAN_IDENTIFICATION, value.ACOMODATION_TYPE, value.PRICE, value.INCLUDED, value.NOT_INCLUDED, value.TEVELER_INFO, value.POLICIES, value.CONDITIONS, value.CREATION, value.MODIFICATION));
+            return Ok(_cms.PostPlanDetailCreate(value.PLAN_IDENTIFICATION, value.ACOMODATION_TYPE, value.PRICE,
+                value.INCLUDED, value.NOT_INCLUDED, value.TEVELER_INFO, value.POLICIES, value.CONDITIONS,
+                value.CREATION, value.MODIFICATION));
         }
 
         [AllowAnonymous]
@@ -189,7 +195,9 @@ namespace APITourism.Controllers
         [Route("api/cms/putplandetailupdate")]
         public IHttpActionResult PutPlanDetailUpdate([FromBody] PlanDetail value)
         {
-            return Ok(_cms.PutPlanDetailUpdate(value.IDENTIFICATION, value.PLAN_IDENTIFICATION, value.ACOMODATION_TYPE, value.PRICE, value.INCLUDED, value.NOT_INCLUDED, value.TEVELER_INFO, value.POLICIES, value.CONDITIONS, value.MODIFICATION));
+            return Ok(_cms.PutPlanDetailUpdate(value.IDENTIFICATION, value.PLAN_IDENTIFICATION, value.ACOMODATION_TYPE,
+                value.PRICE, value.INCLUDED, value.NOT_INCLUDED, value.TEVELER_INFO, value.POLICIES, value.CONDITIONS,
+                value.MODIFICATION));
         }
 
         //CRUD Plans
@@ -213,7 +221,7 @@ namespace APITourism.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/cms/getplanbyname/" +"{name}")]
+        [Route("api/cms/getplanbyname/" + "{name}")]
         public IHttpActionResult GetPlanByName(string name)
         {
             return Ok(_cms.GetPlanByName(name));
@@ -225,7 +233,8 @@ namespace APITourism.Controllers
         [Route("api/cms/postplancreate")]
         public IHttpActionResult PostPlanCreate([FromBody] Plans value)
         {
-            return Ok(_cms.PostPlanCreate(value.NAMES,value.DESCRIPTIONS,value.STATUS_,value.TYPE_,value.CREATION,value.MODIFICATION));
+            return Ok(_cms.PostPlanCreate(value.NAMES, value.DESCRIPTIONS, value.STATUS_, value.TYPE_, value.CREATION,
+                value.MODIFICATION));
         }
 
         [AllowAnonymous]
@@ -233,7 +242,8 @@ namespace APITourism.Controllers
         [Route("api/cms/putplanupdate")]
         public IHttpActionResult PutPlanUpdate([FromBody] Plans value)
         {
-            return Ok(_cms.PutPlanUpdate(value.IDENTIFICATION,value.NAMES,value.DESCRIPTIONS,value.STATUS_,value.TYPE_,value.MODIFICATION));
+            return Ok(_cms.PutPlanUpdate(value.IDENTIFICATION, value.NAMES, value.DESCRIPTIONS, value.STATUS_,
+                value.TYPE_, value.MODIFICATION));
         }
 
         //CRUD Types
@@ -248,7 +258,7 @@ namespace APITourism.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/cms/gettypebyid/"+"{id}")]
+        [Route("api/cms/gettypebyid/" + "{id}")]
         public IHttpActionResult GetTypeById(int id)
         {
             var result = _cms.GetTypeById(id);
@@ -257,7 +267,7 @@ namespace APITourism.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/cms/gettypebyname/"+"{name}")]
+        [Route("api/cms/gettypebyname/" + "{name}")]
         public IHttpActionResult GetTypeByName(string name)
         {
             return Ok(_cms.GetTypeByName(name));
@@ -269,7 +279,8 @@ namespace APITourism.Controllers
         [Route("api/cms/posttypecreate")]
         public IHttpActionResult PostTypeCreate([FromBody] Types value)
         {
-            return Ok(_cms.PostTypeCreate(value.NAMES,value.DESCRIPTIONS,value.IMAGE_URL,value.TYPE_CLASIFICATION,value.STATUS_,value.CREATION,value.MODIFICATION));
+            return Ok(_cms.PostTypeCreate(value.NAMES, value.DESCRIPTIONS, value.IMAGE_URL, value.TYPE_CLASIFICATION,
+                value.STATUS_, value.CREATION, value.MODIFICATION));
         }
 
         [AllowAnonymous]
@@ -277,7 +288,8 @@ namespace APITourism.Controllers
         [Route("api/cms/puttypeupdate")]
         public IHttpActionResult PutTypeUpdate([FromBody] Types value)
         {
-            return Ok(_cms.PutTypeUpdate(value.IDENTIFICATION,value.NAMES,value.DESCRIPTIONS,value.IMAGE_URL,value.TYPE_CLASIFICATION,value.STATUS_,value.MODIFICATION));
+            return Ok(_cms.PutTypeUpdate(value.IDENTIFICATION, value.NAMES, value.DESCRIPTIONS, value.IMAGE_URL,
+                value.TYPE_CLASIFICATION, value.STATUS_, value.MODIFICATION));
         }
 
         //CRUD CitesxPlan
@@ -329,7 +341,7 @@ namespace APITourism.Controllers
         [Route("api/cms/postcitesxplancreate")]
         public IHttpActionResult PostCitesxPlanCreate([FromBody] CitesxPlan value)
         {
-            return Ok(_cms.PostCitesxPlanCreate(value.CITY_IDENTIFICATION,value.PLAN_IDENTIFICATION));
+            return Ok(_cms.PostCitesxPlanCreate(value.CITY_IDENTIFICATION, value.PLAN_IDENTIFICATION));
         }
 
         [AllowAnonymous]
@@ -337,7 +349,8 @@ namespace APITourism.Controllers
         [Route("api/cms/putcitesxplanupdate")]
         public IHttpActionResult PutCitesxPlanUpdate([FromBody] CitesxPlan value)
         {
-            return Ok(_cms.PutCitesxPlanUpdate(value.IDENTIFICATION,value.CITY_IDENTIFICATION,value.PLAN_IDENTIFICATION));
+            return Ok(_cms.PutCitesxPlanUpdate(value.IDENTIFICATION, value.CITY_IDENTIFICATION,
+                value.PLAN_IDENTIFICATION));
         }
 
         //CRUD City
@@ -366,7 +379,7 @@ namespace APITourism.Controllers
         {
             return Ok(_cms.GetCityByName(name));
         }
-        
+
         [AllowAnonymous]
         [HttpGet]
         [Route("api/cms/getcitybysta/" + "{id}")]
@@ -381,7 +394,7 @@ namespace APITourism.Controllers
         [Route("api/cms/postcitycreate")]
         public IHttpActionResult PostCityCreate([FromBody] City value)
         {
-            return Ok(_cms.PostCityCreate(value.NAME_,value.LOCALITED, value.LATITUDED, value.STATE_IDENTIFICATION));
+            return Ok(_cms.PostCityCreate(value.NAME_, value.LOCALITED, value.LATITUDED, value.STATE_IDENTIFICATION));
         }
 
         [AllowAnonymous]
@@ -389,7 +402,8 @@ namespace APITourism.Controllers
         [Route("api/cms/putcityupdate")]
         public IHttpActionResult PutCityUpdate([FromBody] City value)
         {
-            return Ok(_cms.PutCityUpdate(value.IDENTIFICATION, value.NAME_,value.LOCALITED, value.LATITUDED, value.STATE_IDENTIFICATION));
+            return Ok(_cms.PutCityUpdate(value.IDENTIFICATION, value.NAME_, value.LOCALITED, value.LATITUDED,
+                value.STATE_IDENTIFICATION));
         }
 
         //CRUD Company
@@ -432,7 +446,7 @@ namespace APITourism.Controllers
         [Route("api/cms/postcompanycreate")]
         public IHttpActionResult PostCompanyCreate([FromBody] Company value)
         {
-            return Ok(_cms.PostCompanyCreate(value.NAME_,value.DESCRIPTION_,value.NIT));
+            return Ok(_cms.PostCompanyCreate(value.NAME_, value.DESCRIPTION_, value.NIT));
         }
 
         [AllowAnonymous]
@@ -440,7 +454,7 @@ namespace APITourism.Controllers
         [Route("api/cms/putcompanyupdate")]
         public IHttpActionResult PutCompanyUpdate([FromBody] Company value)
         {
-            return Ok(_cms.PutCompanyUpdate(value.IDENTIFICATION,value.NAME_,value.DESCRIPTION_,value.NIT));
+            return Ok(_cms.PutCompanyUpdate(value.IDENTIFICATION, value.NAME_, value.DESCRIPTION_, value.NIT));
         }
 
         //CRUD CompanyProperties
@@ -483,7 +497,7 @@ namespace APITourism.Controllers
         [Route("api/cms/postcompanypropertiescreate")]
         public IHttpActionResult PostCompanyPropertiesCreate([FromBody] CompanyProperties value)
         {
-            return Ok(_cms.PostCompanyPropertiesCreate(value.KEY_,value.VALUE_,value.COMPANY_IDENTIFICATION));
+            return Ok(_cms.PostCompanyPropertiesCreate(value.KEY_, value.VALUE_, value.COMPANY_IDENTIFICATION));
         }
 
         [AllowAnonymous]
@@ -491,7 +505,8 @@ namespace APITourism.Controllers
         [Route("api/cms/putcompanypropertiesupdate")]
         public IHttpActionResult PutCompanyPropertiesUpdate([FromBody] CompanyProperties value)
         {
-            return Ok(_cms.PutCompanyPropertiesUpdate(value.IDENTIFICATION, value.KEY_, value.VALUE_,value.COMPANY_IDENTIFICATION));
+            return Ok(_cms.PutCompanyPropertiesUpdate(value.IDENTIFICATION, value.KEY_, value.VALUE_,
+                value.COMPANY_IDENTIFICATION));
         }
 
         //CRUD Country
@@ -585,7 +600,8 @@ namespace APITourism.Controllers
         [Route("api/cms/postplansxcompanycreate")]
         public IHttpActionResult PostPlansxCompanyCreate([FromBody] PlansxCompany value)
         {
-            return Ok(_cms.PostPlansxCompanyCreate(value.PLAN_IDENTIFICATION, value.COMPANY_IDENTIFICATION,value.PARENT_IDENTIFICATION));
+            return Ok(_cms.PostPlansxCompanyCreate(value.PLAN_IDENTIFICATION, value.COMPANY_IDENTIFICATION,
+                value.PARENT_IDENTIFICATION));
         }
 
         [AllowAnonymous]
@@ -593,7 +609,8 @@ namespace APITourism.Controllers
         [Route("api/cms/putplansxcompanyupdate")]
         public IHttpActionResult PutPlansxCompanyUpdate([FromBody] PlansxCompany value)
         {
-            return Ok(_cms.PutPlansxCompanyUpdate(value.IDENTIFICATION,value.PLAN_IDENTIFICATION,value.COMPANY_IDENTIFICATION,value.PARENT_IDENTIFICATION));
+            return Ok(_cms.PutPlansxCompanyUpdate(value.IDENTIFICATION, value.PLAN_IDENTIFICATION,
+                value.COMPANY_IDENTIFICATION, value.PARENT_IDENTIFICATION));
         }
 
         //CRUD PropertiesxUser
@@ -628,7 +645,8 @@ namespace APITourism.Controllers
         [Route("api/cms/postpropertiesxusercreate")]
         public IHttpActionResult PostPropertiesxUserCreate([FromBody] PropertiesxUser value)
         {
-            return Ok(_cms.PostPropertiesxUserCreate(value.USER_IDENTIFICATION,value.COMPANY_IDENTIFICATION,value.EMAIL, value.PASSWORD_));
+            return Ok(_cms.PostPropertiesxUserCreate(value.USER_IDENTIFICATION, value.COMPANY_IDENTIFICATION,
+                value.EMAIL, value.PASSWORD_));
         }
 
         [AllowAnonymous]
@@ -636,7 +654,8 @@ namespace APITourism.Controllers
         [Route("api/cms/putpropertiesxuserupdate")]
         public IHttpActionResult PutPropertiesxUserUpdate([FromBody] PropertiesxUser value)
         {
-            return Ok(_cms.PutPropertiesxUserUpdate(value.IDENTIFICATION,value.USER_IDENTIFICATION, value.COMPANY_IDENTIFICATION, value.EMAIL, value.PASSWORD_));
+            return Ok(_cms.PutPropertiesxUserUpdate(value.IDENTIFICATION, value.USER_IDENTIFICATION,
+                value.COMPANY_IDENTIFICATION, value.EMAIL, value.PASSWORD_));
         }
 
         //CRUD Role
@@ -748,7 +767,7 @@ namespace APITourism.Controllers
         [Route("api/cms/postuserscreate")]
         public IHttpActionResult PostUsersCreate([FromBody] Users value)
         {
-            return Ok(_cms.PostUsersCreate(value.NAME_, value.SURNAME, value.PHONE, value.BIRTHDAY,value.STATUS_));
+            return Ok(_cms.PostUsersCreate(value.NAME_, value.SURNAME, value.PHONE, value.BIRTHDAY, value.STATUS_));
         }
 
         [AllowAnonymous]
@@ -756,9 +775,10 @@ namespace APITourism.Controllers
         [Route("api/cms/putusersupdate")]
         public IHttpActionResult PutStateUpdate([FromBody] Users value)
         {
-            return Ok(_cms.PutUsersUpdate(value.IDENTIFICATION, value.NAME_, value.SURNAME, value.PHONE, value.BIRTHDAY, value.STATUS_));
+            return Ok(_cms.PutUsersUpdate(value.IDENTIFICATION, value.NAME_, value.SURNAME, value.PHONE, value.BIRTHDAY,
+                value.STATUS_));
         }
     }
-
-
 }
+
+
