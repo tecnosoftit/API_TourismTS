@@ -786,6 +786,15 @@ namespace APITourism.Controllers
             return Ok(_cms.PutUsersUpdate(value.IDENTIFICATION, value.NAME_, value.SURNAME, value.PHONE, value.BIRTHDAY,
                 value.STATUS_));
         }
+
+        //[Authorize(Roles = "SUPERADMIN, SITEADMIN")]
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/cms/postmenucreate")]
+        public IHttpActionResult PostMenuCreate([FromBody] Menu value)
+        {
+            return Ok(_cms.PostMenuCreate(value.MEN_NAME, value.MEN_CONTROLLER, value.MEN_VIEW, value.MEN_ISPARENT, value.MEN_PARENTID, value.MEN_ROLE));
+        }
     }
 }
 

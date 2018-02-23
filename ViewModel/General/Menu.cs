@@ -15,5 +15,6 @@ namespace ViewModel.General
         public bool MEN_ISPARENT { get; set; }
         public int MEN_PARENTID { get; set; }
         public bool MEN_ACTIVE { get; set; }
+        public string MEN_ROLE { get; set; }
     }
 }

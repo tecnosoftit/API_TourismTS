@@ -1448,6 +1448,27 @@ namespace Services
             }
         }
 
+        public int PostMenuCreate(string name, string controller, string view, bool isparent, int parentid, string roles)
+        {
+            try
+            {
+                var result =
+                    _db.Database.ExecuteSqlCommand(
+                        "EXEC SP_MENUCRE @NAME, @CONTROLLER, @VIEW, @ISPARENT, @PARENT_ID, @ROLES",
+                        new SqlParameter("@NAME", name),
+                        new SqlParameter("@CONTROLLER", controller),
+                        new SqlParameter("@VIEW", view),
+                        new SqlParameter("@ISPARENT", isparent),
+                        new SqlParameter("@PARENT_ID", parentid),
+                        new SqlParameter("@ROLES", roles));
+                return result;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
         //CompanyProperties
 
         public IDictionary<string, string> GetCompanyInformation(string url)
