@@ -400,6 +400,14 @@ C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\APITourism\bin\es\System.
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\APITourism\obj\Debug\APITourism.csprojResolveAssemblyReference.cache
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\APITourism\obj\Debug\APITourism.dll
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\APITourism\obj\Debug\APITourism.pdb
+D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.IO.Compression.dll
+D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\VBCSCompiler.exe
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\APITourism\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\APITourism\bin\System.Diagnostics.DiagnosticSource.xml
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\ApplicationInsights.config
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\APITourism.dll.config
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\APITourism.dll
@@ -411,13 +419,9 @@ D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\csi.exe
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\csi.exe.config
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\csi.rsp
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CodeAnalysis.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.VisualBasic.Core.targets
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -427,7 +431,6 @@ D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.Console.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.Diagnostics.Process.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.IO.Compression.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.IO.FileSystem.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -450,7 +453,6 @@ D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\System.Xml.XPath.XDocument.dl
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\vbc.exe
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\vbc.exe.config
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\vbc.rsp
-D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\VBCSCompiler.exe
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\roslyn\VBCSCompiler.exe.config
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\Antlr3.Runtime.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\bin\EntityFramework.dll
@@ -535,5 +537,3 @@ D:\TecnoSoftIT\API_TourismTS\APITourism\bin\es\System.Web.Optimization.resources
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.csprojResolveAssemblyReference.cache
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.dll
 D:\TecnoSoftIT\API_TourismTS\APITourism\obj\Debug\APITourism.pdb
-C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\APITourism\bin\System.Diagnostics.DiagnosticSource.dll
-C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\APITourism\bin\System.Diagnostics.DiagnosticSource.xml

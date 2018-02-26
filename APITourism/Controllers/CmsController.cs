@@ -668,14 +668,6 @@ namespace APITourism.Controllers
             return Ok(_cms.GetRole());
         }
 
-        [Authorize(Roles = "SUPERADMIN")]
-        [HttpPost]
-        [Route("api/cms/CreateUser")]
-        public IHttpActionResult CreateUser(CreateUser usr)
-        {
-            return Ok(_cms.CreateUser(usr));
-        }
-
         [AllowAnonymous]
         [HttpGet]
         [Route("api/cms/getrolebyid/" + "{id}")]

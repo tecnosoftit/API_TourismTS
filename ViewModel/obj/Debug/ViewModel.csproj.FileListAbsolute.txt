@@ -15,6 +15,5 @@ C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\ViewModel\obj\Debug\ViewM
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\ViewModel\obj\Debug\ViewModel.pdb
 D:\TecnoSoftIT\API_TourismTS\ViewModel\bin\Debug\ViewModel.dll
 D:\TecnoSoftIT\API_TourismTS\ViewModel\bin\Debug\ViewModel.pdb
-D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
 D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.dll
 D:\TecnoSoftIT\API_TourismTS\ViewModel\obj\Debug\ViewModel.pdb

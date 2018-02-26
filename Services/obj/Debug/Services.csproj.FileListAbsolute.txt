@@ -39,6 +39,10 @@ C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\Services\bin\Debug\Newton
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\Services\obj\Debug\Services.dll
 C:\Users\danie\OneDrive\Documents\GitHub\API_TourismTS\Services\obj\Debug\Services.pdb
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\TecnoSoftIT\API_TourismTS\Services\bin\Debug\Services.dll.config
 D:\TecnoSoftIT\API_TourismTS\Services\bin\Debug\Services.dll
 D:\TecnoSoftIT\API_TourismTS\Services\bin\Debug\Services.pdb
@@ -59,7 +63,3 @@ D:\TecnoSoftIT\API_TourismTS\Services\bin\Debug\Newtonsoft.Json.xml
 D:\TecnoSoftIT\API_TourismTS\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 D:\TecnoSoftIT\API_TourismTS\Services\obj\Debug\Services.dll
 D:\TecnoSoftIT\API_TourismTS\Services\obj\Debug\Services.pdb
-C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\USER\Documents\Tecnosoft IT\API_TourismTS\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

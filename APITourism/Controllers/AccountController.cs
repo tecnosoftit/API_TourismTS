@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
 using Newtonsoft.Json;
+using Services;
 using ViewModel.General;
 
 namespace APITourism.Controllers
@@ -13,6 +14,8 @@ namespace APITourism.Controllers
     [Route("api/account/")]
     public class AccountController : ApiController
     {
+        private readonly Cms _cms = new Cms();
+
         [Authorize]
         [HttpGet]
         [Route("api/account/GetUserDeatil")]
@@ -39,6 +42,14 @@ namespace APITourism.Controllers
         public IHttpActionResult IsLogged()
         {
             return Ok(true);
+        }
+
+        [Authorize(Roles = "SUPERADMIN")]
+        [HttpPost]
+        [Route("api/account/CreateUser")]
+        public IHttpActionResult CreateUser(CreateUser usr)
+        {
+            return Ok(_cms.CreateUser(usr));
         }
     }
 }
