@@ -1448,19 +1448,22 @@ namespace Services
             }
         }
 
-        public int PostMenuCreate(string name, string controller, string view, bool isparent, int parentid, string roles)
+        public int PostMenuCreate(Menu value)
         {
+            var rol = "";
             try
             {
+                foreach (var item in value.MEN_ROLE) rol += item + "|";
                 var result =
                     _db.Database.ExecuteSqlCommand(
                         "EXEC SP_MENUCRE @NAME, @CONTROLLER, @VIEW, @ISPARENT, @PARENT_ID, @ROLES",
-                        new SqlParameter("@NAME", name),
-                        new SqlParameter("@CONTROLLER", controller),
-                        new SqlParameter("@VIEW", view),
-                        new SqlParameter("@ISPARENT", isparent),
-                        new SqlParameter("@PARENT_ID", parentid),
-                        new SqlParameter("@ROLES", roles));
+                        new SqlParameter("@NAME", value.MEN_NAME),
+                        new SqlParameter("@CONTROLLER", value.MEN_CONTROLLER),
+                        new SqlParameter("@VIEW", value.MEN_VIEW),
+                        new SqlParameter("@ISPARENT", value.MEN_ISPARENT),
+                        new SqlParameter("@PARENT_ID", value.MEN_PARENTID),
+                        new SqlParameter("@ROLES", rol));
+                
                 return result;
             }
             catch (Exception e)

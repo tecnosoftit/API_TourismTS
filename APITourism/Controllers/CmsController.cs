@@ -783,9 +783,9 @@ namespace APITourism.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("api/cms/postmenucreate")]
-        public IHttpActionResult PostMenuCreate([FromBody] Menu value)
+        public IHttpActionResult PostMenuCreate(Menu value)
         {
-            return Ok(_cms.PostMenuCreate(value.MEN_NAME, value.MEN_CONTROLLER, value.MEN_VIEW, value.MEN_ISPARENT, value.MEN_PARENTID, value.MEN_ROLE));
+            return Ok(_cms.PostMenuCreate(value));
         }
     }
 }
