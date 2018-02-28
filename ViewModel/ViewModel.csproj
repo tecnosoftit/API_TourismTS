@@ -50,6 +50,7 @@
     <Compile Include="General\CreateUser.cs" />
     <Compile Include="General\Images.cs" />
     <Compile Include="General\ImagesPerPlan.cs" />
+    <Compile Include="General\MenuView.cs" />
     <Compile Include="General\MenuxRole.cs" />
     <Compile Include="General\Menu.cs" />
     <Compile Include="General\PlanDetail.cs" />

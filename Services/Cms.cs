@@ -1448,6 +1448,7 @@ namespace Services
             }
         }
 
+        //CRUD MENU
         public int PostMenuCreate(Menu value)
         {
             var rol = "";
@@ -1469,6 +1470,20 @@ namespace Services
             catch (Exception e)
             {
                 return 0;
+            }
+        }
+
+        public List<Menu> GetMenu(int id)
+        {
+            try
+            {
+                var result = "EXEC SP_MENUGEN " + id;
+                var rtn = _db.Database.SqlQuery<Menu>(result).ToList();
+                return rtn;
+            }
+            catch (Exception e)
+            {
+                return new List<Menu>();
             }
         }
 

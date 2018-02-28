@@ -787,6 +787,14 @@ namespace APITourism.Controllers
         {
             return Ok(_cms.PostMenuCreate(value));
         }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("api/cms/getmenu/" +"{id}")]
+        public IHttpActionResult GetMenu(int id)
+        {
+            return Ok(_cms.GetMenu(id));
+        }
     }
 }
 

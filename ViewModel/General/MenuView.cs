@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ViewModel.General
 {
-    public class Menu
+    class MenuView
     {
         public int? MEN_ID { get; set; }
         public string MEN_NAME { get; set; }
@@ -15,6 +15,6 @@ namespace ViewModel.General
         public bool MEN_ISPARENT { get; set; }
         public int? MEN_PARENTID { get; set; }
         public bool MEN_ACTIVE { get; set; }
-        public List<string> MEN_ROLE { get; set; }        
+        public List<string> MEN_ROLE { get; set; }
     }
 }
